@@ -17,6 +17,15 @@ export default function HomePage() {
           </Grid>
         ))}
       </Grid>
+      <Grid container spacing={2}>
+            {Object.entries(photos).map(([id, photo]) => (
+                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={id}>
+                    <Link href={`/photos/${id}/detail`}>
+                        <S.Image {...photo} />
+                    </Link>
+                </Grid>
+            ))}
+      </Grid>
     </Container>
   );
 }
